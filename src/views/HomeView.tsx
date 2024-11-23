@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button, StyleSheet, Text, View } from "react-native";
-import { FODatePicker } from '../components';
+import { FODatePicker, NEOList } from '../components';
 import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 import { NearEarthObject } from '../models';
 import { loadNEOs } from '../network';
@@ -46,6 +46,7 @@ const HomeView: React.FC = () => {
           />
         )
       }
+      <NEOList objects={nearEarthObjects} />
     </View>
   )
 };

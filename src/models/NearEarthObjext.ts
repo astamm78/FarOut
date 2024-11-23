@@ -29,6 +29,7 @@ interface CloseApproachData {
 }
 
 interface NearEarthObject {
+  id: string;
   name: string;
   estimated_diameter: EstimatedDiameterCollection;
   close_approach_data: CloseApproachData;
