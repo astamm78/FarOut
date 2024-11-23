@@ -1,5 +1,5 @@
 import { NearEarthObject } from '../models';
-import { NetworkConfig } from './';
+import NetworkConfig from './NetworkConfig';
 import { apiString } from '../utils';
 
 export const loadNEOs = async (startDate: Date): Promise<NearEarthObject[]> => {
