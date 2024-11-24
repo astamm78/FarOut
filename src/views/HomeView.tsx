@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Button, StyleSheet, Text, View } from "react-native";
-import { FODatePicker, NEOList } from '../components';
+import { Button, StyleSheet, Text, SafeAreaView } from "react-native";
+
 import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
+
+import { FODatePicker, NEOList } from '../components';
 import { NearEarthObject } from '../models';
 import { loadNEOs } from '../network';
 
@@ -34,7 +36,7 @@ const HomeView: React.FC = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text>Far Out!</Text>
       <Text>Showing Near Earth Objects for {selectedDate.toDateString()}</Text>
       <Button title='Change Date' onPress={showDatePicker} />
@@ -47,7 +49,7 @@ const HomeView: React.FC = () => {
         )
       }
       <NEOList objects={nearEarthObjects} />
-    </View>
+    </SafeAreaView>
   )
 };
 

@@ -1,6 +1,8 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
+
 import { NearEarthObject } from '../models';
+import { NEOCell } from './';
 
 interface NEOListProps {
   objects: NearEarthObject[];
@@ -8,13 +10,13 @@ interface NEOListProps {
 
 const NEOList: React.FC<NEOListProps> = ({ objects }) => {
   return (
-    <View>
+    <ScrollView>
       {
         objects.map(object => (
-          <Text key={object.id}>{object.name}</Text>
+          <NEOCell key={object.id} object={object} />
         ))
       }
-    </View>
+    </ScrollView>
   )
 };
 
