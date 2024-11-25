@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 
 import { NearEarthObject } from '../models';
-import { NEOCell } from './';
+import NEOCell from './NEOCell';
 
 interface NEOListProps {
   objects: NearEarthObject[];

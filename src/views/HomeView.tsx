@@ -19,7 +19,6 @@ const HomeView: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       const objects = await loadNEOs(selectedDate);
-      console.log(objects);
       setNearEarthObjects(objects);
       hideDatePicker();
     }
