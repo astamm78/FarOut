@@ -5,7 +5,7 @@ import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 
 interface FODatePickerProps {
   selectedDate: Date;
-  onDateSelect: (event: DateTimePickerEvent, date: Date) => void;
+  onDateSelect: (event: DateTimePickerEvent, date?: Date) => void;
 }
 
 const FODatePicker: React.FC<FODatePickerProps> = ({ selectedDate, onDateSelect }) => {

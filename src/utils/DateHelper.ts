@@ -1,7 +1,8 @@
-export const apiString = (date: Date): string => {
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
+export const apiString = (date: Date): string => (
+  date.toISOString().split('T')[0]
+)
 
-  return `${year}-${month}-${day}`
+export const displayString = (date: Date): string => {
+  var options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString("en-US", options);
 }

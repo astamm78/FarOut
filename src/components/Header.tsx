@@ -1,17 +1,15 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, SafeAreaView, View, PlatformColor } from 'react-native';
+import { Pressable, StyleSheet, Text, SafeAreaView, View } from 'react-native';
+import { displayString } from 'src/utils/DateHelper';
 
 import { Palette } from 'src/utils';
-
-import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 
 interface HeaderProps {
   selectedDate: Date;
   showDatePicker: () => void;
-  onDateSelect: (event: DateTimePickerEvent, selectedDate: Date) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ selectedDate, showDatePicker, onDateSelect}) => {
+const Header: React.FC<HeaderProps> = ({ selectedDate, showDatePicker }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.subContainer}>
@@ -19,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ selectedDate, showDatePicker, onDateSel
         <Text style={styles.subheadText}>Showing Near Earth Objects for</Text>
         
         <Pressable onPress={showDatePicker} >
-          <Text style={[styles.subheadText, styles.subheadCallout]}>{selectedDate.toDateString()}</Text>
+          <Text style={[styles.subheadText, styles.subheadCallout]}>{displayString(selectedDate)}</Text>
         </Pressable>
       </View>
     </SafeAreaView>

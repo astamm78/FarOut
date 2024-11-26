@@ -12,8 +12,10 @@ const HomeView: React.FC = () => {
   const [showPicker, setShowPicker] = useState<boolean>(false);
   const [nearEarthObjects, setNearEarthObjects] = useState<NearEarthObject[]>([]);
 
-  const onDateSelect = useCallback((event: DateTimePickerEvent, selectedDate: Date) => {
-    setSelectedDate(selectedDate);
+  const onDateSelect = useCallback((event: DateTimePickerEvent, date?: Date) => {
+    if (date) {
+      setSelectedDate(date);
+    }
   }, []);
 
   useEffect(() => {
