@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@expo-google-fonts/noto-sans": "^0.2.3",
     "@react-native-community/datetimepicker": "^8.2.0",
     "@types/react": "~18.2.79",
     "expo": "^51.0.0",

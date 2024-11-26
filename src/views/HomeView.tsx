@@ -38,7 +38,6 @@ const HomeView: React.FC = () => {
     <View style={styles.container}>
       <Header 
         selectedDate={selectedDate}
-        showPicker={showPicker}
         showDatePicker={showDatePicker}
         onDateSelect={onDateSelect}
       />

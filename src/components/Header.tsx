@@ -1,23 +1,26 @@
-import React from "react";
-import { Button, StyleSheet, Text, SafeAreaView, View } from "react-native";
+import React from 'react';
+import { Pressable, StyleSheet, Text, SafeAreaView, View, PlatformColor } from 'react-native';
+
+import { Palette } from 'src/utils';
 
 import { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 
 interface HeaderProps {
   selectedDate: Date;
-  showPicker: boolean;
   showDatePicker: () => void;
   onDateSelect: (event: DateTimePickerEvent, selectedDate: Date) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ selectedDate, showPicker, showDatePicker, onDateSelect}) => {
+const Header: React.FC<HeaderProps> = ({ selectedDate, showDatePicker, onDateSelect}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.subContainer}>
         <Text style={styles.headerText}>Far Out!</Text>
-        <Text style={styles.subheadText}>Showing Near Earth Objects for {selectedDate.toDateString()}</Text>
-        <Button title='Change Date' onPress={showDatePicker} />
-
+        <Text style={styles.subheadText}>Showing Near Earth Objects for</Text>
+        
+        <Pressable onPress={showDatePicker} >
+          <Text style={[styles.subheadText, styles.subheadCallout]}>{selectedDate.toDateString()}</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   )
@@ -25,11 +28,11 @@ const Header: React.FC<HeaderProps> = ({ selectedDate, showPicker, showDatePicke
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1, 
-    justifyContent: 'center',
-    backgroundColor: 'gray', 
+    backgroundColor: Palette.lightBlue, 
     width: '100%',
     padding: 20,
+    borderBottomColor: Palette.darkBlue,
+    borderBottomWidth: 1,
   },
 
   subContainer: {
@@ -41,15 +44,23 @@ export const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 22,
+    fontSize: 48,
     textTransform: 'uppercase',
-    marginBottom: 10,
+    marginBottom:-4,
+    fontFamily: 'NotoSans_200ExtraLight',
   },
 
   subheadText: {
     color: 'white',
     textAlign: 'center',
-    fontSize: 14,
+    fontSize: 16,
+    fontFamily: 'NotoSans_400Regular',
+  },
+
+  subheadCallout: {
+    fontSize: 18,
+    fontFamily: 'NotoSans_600SemiBold',
+    color: Palette.darkBlue,
   },
 })
 
