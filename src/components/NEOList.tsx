@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 
 import { NearEarthObject } from '../models';
 import NEOCell from './NEOCell';
@@ -10,13 +10,15 @@ interface NEOListProps {
 
 const NEOList: React.FC<NEOListProps> = ({ objects }) => {
   return (
-    <ScrollView>
-      {
-        objects.map(object => (
-          <NEOCell key={object.id} object={object} />
-        ))
-      }
-    </ScrollView>
+    <SafeAreaView style={{flex: 7, backgroundColor: 'yellow'}}>
+      <ScrollView>
+        {
+          objects.map(object => (
+            <NEOCell key={object.id} object={object} />
+          ))
+        }
+      </ScrollView>
+    </SafeAreaView>
   )
 };
 
