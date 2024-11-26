@@ -10,21 +10,15 @@ interface NEOCellProps {
 const NEOCell: React.FC<NEOCellProps> = ({ object }) => {
   const [displayExtra, setDisplayExtra] = useState<boolean>(false);
 
-  const displayToggle = new Animated.Value(0);
-
-  const showExtra = () => {
-    setDisplayExtra(true);
-  }
-
-  const hideExtra = () => {
-    setDisplayExtra(false);
+  const toggleDisplay = () => {
+    setDisplayExtra(!displayExtra);
   }
 
   return (
     <View>
       <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-evenly'}}>
         <Text>{object.name}</Text>
-        <Pressable onPress={displayExtra ? hideExtra : showExtra}>
+        <Pressable onPress={toggleDisplay}>
           <Text>{displayExtra ? 'Show Less' : 'Show More'}</Text>
         </Pressable>
       </View>
