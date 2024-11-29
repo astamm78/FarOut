@@ -19,6 +19,7 @@ const Header: React.FC<HeaderProps> = ({ selectedDate, showDatePicker }) => {
         <Pressable onPress={showDatePicker} >
           <Text style={[styles.subheadText, styles.subheadCallout]}>{displayString(selectedDate)}</Text>
         </Pressable>
+        <Text style={styles.hint}>(Tap on date to change)</Text>
       </View>
     </SafeAreaView>
   )
@@ -44,7 +45,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 48,
     textTransform: 'uppercase',
-    marginBottom:-4,
+    marginBottom: 2,
     fontFamily: 'NotoSans_200ExtraLight',
   },
 
@@ -53,6 +54,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
     fontFamily: 'NotoSans_400Regular',
+    lineHeight: 28,
   },
 
   subheadCallout: {
@@ -60,6 +62,10 @@ export const styles = StyleSheet.create({
     fontFamily: 'NotoSans_600SemiBold',
     color: Palette.darkBlue,
   },
+
+  hint: {
+    textAlign: 'center',
+  }
 })
 
 export default Header;

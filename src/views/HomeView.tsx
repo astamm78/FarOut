@@ -41,13 +41,13 @@ const HomeView: React.FC = () => {
       <Header 
         selectedDate={selectedDate}
         showDatePicker={showDatePicker}
-        onDateSelect={onDateSelect}
       />
       {
         showPicker && (
           <FODatePicker 
             selectedDate={selectedDate}
             onDateSelect={onDateSelect}
+            hideDatePicker={hideDatePicker}
           />
         )
       }
