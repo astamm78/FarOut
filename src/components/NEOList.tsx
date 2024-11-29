@@ -1,8 +1,9 @@
 import React from 'react';
-import { SafeAreaView, SectionList, Text } from 'react-native';
+import { SafeAreaView, SectionList, Text, View } from 'react-native';
 
 import { NearEarthObject } from '../models';
 import NEOCell from './NEOCell';
+import SectionHeader from './SectionHeader';
 
 interface NEOListProps {
   objects: NearEarthObject[];
@@ -17,7 +18,7 @@ const NEOList: React.FC<NEOListProps> = ({ objects }) => {
   ]
 
   return (
-    <SafeAreaView style={{flex: 7, backgroundColor: 'yellow'}}>
+    <SafeAreaView style={{flex: 7}}>
       <SectionList 
         sections={sections}
         keyExtractor={ (item) => item.id }
@@ -25,7 +26,7 @@ const NEOList: React.FC<NEOListProps> = ({ objects }) => {
           <NEOCell object={item} />
         )}
         renderSectionHeader={({section: {headerCount}}) => (
-          <Text>{headerCount} Results</Text>
+          <SectionHeader count={headerCount} />
         )}
       />
     </SafeAreaView>
