@@ -1,1 +1,1 @@
-export { default as NearEarthObject } from './NearEarthObjext';
+export { default as NearEarthObject } from './NearEarthObject';

@@ -1,3 +1,3 @@
-export { apiString } from './DateHelper';
+export { apiString, displayString } from './DateHelper';
 export { numericalDisplay } from './NumberHelper';
 export { Palette } from './Palette';

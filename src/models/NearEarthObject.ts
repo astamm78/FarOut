@@ -1,4 +1,4 @@
-import { numericalDisplay } from "src/utils";
+import { numericalDisplay } from '../utils';
 
 interface NearEarthObjectInterface {
   id: string;
@@ -45,7 +45,7 @@ class NearEarthObject implements NearEarthObjectInterface {
     const min = numericalDisplay(this.estDiamFeetMin);
     const max = numericalDisplay(this.estDiamFeetMax);
     
-    return `Between ${min}  and ${max} feet.`
+    return `Between ${min} and ${max} feet.`
   }
 
   relativeVelocityMPHDescription = (): string => {
@@ -61,7 +61,7 @@ class NearEarthObject implements NearEarthObjectInterface {
   }
 
   potentialHazerdDescription = (): string => (
-    this.potentiallyHazerdous ? "Potentially hazerdous!" : "Not a potential hazard."
+    this.potentiallyHazerdous ? 'Potentially hazerdous!' : 'Not a potential hazard.'
   )
 }
 
