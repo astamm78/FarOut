@@ -45,8 +45,8 @@ interface DetailSectionProps {
 const DetailSection: React.FC<DetailSectionProps> = ({ header, description }) => {
   return (
     <View style={styles.detailSection}>
-      <Text style={styles.detailSectionHeader}>{header}:</Text>
-      <Text style={styles.detailSectionDescription}>{description}</Text>
+      <Text style={styles.detailSectionHeader}>{header}: <Text style={styles.detailSectionDescription}>{description}</Text>
+      </Text>
     </View>
   )
 };
@@ -89,14 +89,15 @@ export const styles = StyleSheet.create({
   },
 
   detailSectionHeader: {
-    fontFamily: 'NotoSans_200ExtraLight',
+    fontFamily: 'NotoSans_400Regular',
     fontSize: 16,
     marginRight: 4,
     color: Palette.lightBlue,
   },
-
+  
   detailSectionDescription: {
-    fontFamily: 'NotoSans_400Regular',
+    fontFamily: 'NotoSans_200ExtraLight',
+    color: 'black',
   },
 })
 
