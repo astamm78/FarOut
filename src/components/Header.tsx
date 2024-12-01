@@ -42,7 +42,6 @@ export const styles = StyleSheet.create({
   headerText: {
     color: 'white',
     textAlign: 'center',
-    fontWeight: 'bold',
     fontSize: 48,
     textTransform: 'uppercase',
     marginBottom: 2,
